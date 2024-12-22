@@ -15,3 +15,5 @@ variable "az" {
 variable "private-subnet-elb-1"{}
 variable "private-subnet-elb-2"{}
 variable "private-subnet-elb-3"{}
+
+variable "ecs-admin-password" {}

@@ -26,14 +26,14 @@ resource "huaweicloud_networking_secgroup" "ecs-sg" {
 }
 
 resource "huaweicloud_networking_secgroup_rule" "ecs-sg-rule" {
-  security_group_id        = huaweicloud_networking_secgroup.ecs-sg.id
-  direction                = "ingress"
-  ethertype                = "IPv4"
-  protocol                 = "tcp"
-  ports = "80,22"
+  security_group_id         = huaweicloud_networking_secgroup.ecs-sg.id
+  direction                 = "ingress"
+  ethertype                 = "IPv4"
+  protocol                  = "tcp"
+  ports                     = "80,22"
   # port_range_min           = "22"
   # port_range_max           = "22"
-  remote_ip_prefix         = "0.0.0.0/0"
+  remote_ip_prefix          = "0.0.0.0/0"
 }
 
 # EIP
@@ -61,7 +61,7 @@ resource "huaweicloud_compute_instance" "private-ecs" {
     image_id                = var.image-id
     flavor_id               = "c6.large.2"
 #   key_pair           = "my_key_pair_name"
-    admin_pass              = "Deem@123"
+    admin_pass              = var.ecs-admin-password
     security_group_ids      = [ huaweicloud_networking_secgroup.ecs-sg.id ]
 #   availability_zone     = "cn-north-4a"s
     # system_disk_type = "SAS"

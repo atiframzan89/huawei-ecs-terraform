@@ -23,5 +23,6 @@ module "ecs" {
     az                  = data.huaweicloud_availability_zones.zones.names
     vpc-id              = module.vpc.vpc-id
     image-id            = data.huaweicloud_images_image.ubuntu.id
+    ecs-admin-password  = var.ecs-admin-password
    
 }
