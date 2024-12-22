@@ -10,7 +10,7 @@ terraform {
 
 provider "huaweicloud" {
   region      = "${var.region}"
-  shared_config_file = "C:/Users/Atif Ramzan/.hcloud/config.json"
+  shared_config_file = "<you config file location here>"
   profile     = "default"
   
 }
